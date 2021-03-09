@@ -11,7 +11,7 @@ const url=`https://jsonplaceholder.typicode.com/posts/${id}`
 fetch(url)
 .then(res=>res.json())
 .then(data=>setPost(data))
-    },[])
+    },[id])
 
 const [comments,setComments]=useState([])
     useEffect(() => {
@@ -19,7 +19,7 @@ const [comments,setComments]=useState([])
         fetch(url)
         .then(res=>res.json())
         .then(data=>setComments(data))
-            },[])
+            },[id])
     return (
         <div>
             <h1>this is post detail {post.id}</h1>
